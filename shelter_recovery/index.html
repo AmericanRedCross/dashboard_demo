@@ -9,6 +9,8 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/leaflet.css" rel="stylesheet">  <!-- http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.css -->
     
+    <link rel="stylesheet" href="css/MarkerCluster.css" />
+    <link rel="stylesheet" href="css/MarkerCluster.Default.css" />
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -34,8 +36,53 @@
       #map {
         height: 500px;
       }
-      #housePic {
+      #pt_photo {
         border: 1px solid #6d6e70;
+        max-height: 300px;
+      }
+      /*styling for marker clusters*/
+      .marker-cluster-small {
+        background-color: rgba(255, 255, 255, 0.5);
+      }
+      .marker-cluster-small div {
+        background-color: rgba(237, 27, 46, 0.7);
+      }
+
+      .marker-cluster-medium {
+        background-color: rgba(255, 255, 255, 0.5);
+      }
+      .marker-cluster-medium div {
+        background-color: rgba(237, 27, 46, 0.7);
+      }
+
+      .marker-cluster-large {
+        background-color: rgba(255, 255, 255, 0.5);
+      }
+      .marker-cluster-large div {
+        background-color: rgba(237, 27, 46, 0.7);
+      }
+      .marker-cluster div {
+        color: #FFF;
+        text-align: center;
+        border-radius: 15px;
+        font: bold 12px "Helvetica Neue", Arial, Helvetica, sans-serif;
+      }
+      .btn-zoom {
+        background-color: #ffffff;
+        border-color: #d7d7d8;
+        font-weight: bold;
+        color: #6d6e70;
+        box-shadow: 1px 1px 9px #c3c3c5;
+      }
+      .btn:hover,
+      .btn:focus {
+        outline: 0;
+      }
+
+      .btn-zoom:hover,
+      .btn-zoom:focus {
+        color: black;
+        background-color: #f4f4f4; 
       }
       
     </style>
@@ -55,7 +102,7 @@
     </div>
     <div class="row">
       <div class="col-sm-12">
-        <h4>Shelter Recovery Demonstration Map <small>- Exploring new ways of looking at data. Please send feedback or report any issues to <a href="mailto://daniel.joseph@ifrc.org">Dan Joseph</a> or using <a href="https://github.com/AmericanRedCross/dashboard_demo/issues" target="_blank">GitHub</a>. Data is not necessarily reflective of actual or planned activties; it has been created for demonstration purposes only. Additional map functionality could include: filtering options to display support by only certain partner(s); coloring markers based on support type or funding partner; a date slider to display only support completed on or before a certain date.</small></h4>
+        <h4>Shelter Recovery Demonstration Map <small>- Exploring new ways of looking at data. Map functionality could include: filtering options to display support by only certain partner(s); coloring markers based on funding partner; different icons to identify support type; a date slider to display only support completed on or before a certain date.</small></h4>
       </div>
     </div>
     <hr>
@@ -65,7 +112,7 @@
     </div>
     <div class="col-sm-4">
       <div id="defaultSidebar">
-        <p>In total, 1.14 million houses have been severely damaged or destroyed by Typhoon Yolanda (Haiyan). The Government of the Philippines has asked humanitarian organizations to address the shelter needs of 500,000 households.</p>
+        <p>In total, 1.14 million houses were severely damaged or destroyed by Typhoon Yolanda (Haiyan). The Government of the Philippines has asked humanitarian organizations to address the shelter needs of 500,000 households.</p>
         <p> The <a target="_blank" href="http://www.redcross.org.ph/">Philippine Red Cross</a>, along with other Red Cross Red Crescent Society partners, will support XXX,XXX households through:
           <ul>
             <li>support target 1</li>
@@ -73,13 +120,26 @@
             <li>support target 3</li>
           </ul>
         </p>
-        <p>Hover over a marker on the map to learn more.</p>
+        <hr>
+        <p>Click a cluster on the map to zoom in. Hover over a marker to learn more about that point.</p>
+        <button class="btn btn-sm btn-zoom" type="button" onClick="zoomOut();">Zoom to Full Extent</button>
       </div>
-      <div class="houseInfo" style="display:none;">
-        <div ><img id="housePic" class="img-responsive" src="http://placehold.it/800x600"></div><br>
-          <p>This household was supported with shelter <b><span id="houseProjectType"></span></b>. The funding was provided by <b><span id="houseFinancingPartner"></span></b>. The shelter support was complete on <b> <span id="houseDateCompleted"></span></b>.</p>
+      <div class="ptInfo" style="display:none;">
+        <div ><img id="pt_photo" class="img-responsive" src="http://placehold.it/800x600"></div><br>
+          <p>User selected: <b><span id="user_select"></span></b>.</p>
+          <p>User text input: <b><span id="user_text"></span></b>.</p>
+          <p>User date entry: <b> <span id="user_date"></span></b>.</p>
       </div>
     </div>  
+    </div>
+
+    <div class="row">
+      <div class="col-sm-12">
+        <hr>
+        <p><small>Please send feedback or report any issues to <a href="mailto://daniel.joseph@ifrc.org">Dan Joseph</a> or using <a href="https://github.com/AmericanRedCross/dashboard_demo/issues" target="_blank">GitHub</a>. Data has been created for demonstration purposes only.<small></p>
+      </div>
+      <br>
+      <br>
     </div>
     
  
@@ -90,7 +150,8 @@
     <script src="js/bootstrap.min.js"></script>
 
     <script src="js/leaflet.js"></script>  <!-- http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.js -->
-    
+    <script src="js/leaflet.markercluster.js"></script>
+
     <script src="js/main.js"></script>
   </body>
 </html>
