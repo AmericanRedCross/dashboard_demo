@@ -30,6 +30,7 @@ var centroidOptions = {
 // reset map bounds using Zoom to Extent button
 function zoomOut() {
     map.fitBounds(markersBounds);
+    defaultInfo();
 }
 
 function getPointData(){
@@ -100,8 +101,7 @@ function markersToMap(){
     },
     onEachFeature: function (feature, layer) {
       layer.on({
-        mouseover: markerInfo,
-        mouseout: defaultInfo
+        click: markerInfo
       }); 
     }         
   });

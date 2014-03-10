@@ -67,7 +67,7 @@
         border-radius: 15px;
         font: bold 12px "Helvetica Neue", Arial, Helvetica, sans-serif;
       }
-      .btn-zoom {
+      .btn-zoom, .btn-default {
         background-color: #ffffff;
         border-color: #d7d7d8;
         font-weight: bold;
@@ -79,8 +79,7 @@
         outline: 0;
       }
 
-      .btn-zoom:hover,
-      .btn-zoom:focus {
+      .btn-zoom:hover, .btn-zoom:focus, .btn-default:hover, .btn-default:focus {
         color: black;
         background-color: #f4f4f4; 
       }
@@ -121,7 +120,7 @@
           </ul>
         </p>
         <hr>
-        <p>Click a cluster on the map to zoom in. Hover over a marker to learn more about that point.</p>
+        <p>Click a cluster on the map to zoom in. Click a marker to learn more about that point.</p>
         <button class="btn btn-sm btn-zoom" type="button" onClick="zoomOut();">Zoom to Full Extent</button>
       </div>
       <div class="ptInfo" style="display:none;">
@@ -129,6 +128,11 @@
           <p>User selected: <b><span id="user_select"></span></b>.</p>
           <p>User text input: <b><span id="user_text"></span></b>.</p>
           <p>User date entry: <b> <span id="user_date"></span></b>.</p>
+          <br>
+          <p>Click a cluster on the map to zoom in. Click a marker to learn more about that point.</p>
+          <button class="btn btn-sm btn-zoom" type="button" onClick="zoomOut();">Zoom to Full Extent</button>
+          <button class="btn btn-sm btn-default" type="button" onClick="defaultInfo();">Return to Summary Info</button>
+
       </div>
     </div>  
     </div>
