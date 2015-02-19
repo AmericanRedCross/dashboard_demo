@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="icon" href="img/favicon.ico" type="image/x-icon"/>
+  <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon"/>
+
+  <title></title>
+  
+  <!-- bower:css -->
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+  <link rel="stylesheet" href="bower_components/leaflet/dist/leaflet.css" />
+  <link rel="stylesheet" href="bower_components/nouislider/distribute/jquery.nouislider.min.css" />
+  <link rel="stylesheet" href="bower_components/nouislider/distribute/jquery.nouislider.pips.min.css" />
+  <!-- endbower -->
+
+
+  <link href="css/custom.css" rel="stylesheet">
+
+
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+      <![endif]-->
+
+    </head>
+    <body>
+
+
+      <div id="tooltip"></div>
+      
+<!--     <div id="loading-wrapper">
+      <div id="loading-progress">
+        <img id="loader" src="img/ajax_loader_gray_512.gif" />
+        <div class="progress">
+          <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%;">
+          </div>
+        </div>
+      </div>
+    </div> -->
+
+    <div class="container-fluid">
+      <div class="col-sm-8 col-map">
+
+        <div id="map"></div>
+      </div> <!-- /.col-sm-8 -->
+      <div class="col-sm-4">
+        <div id="infoWrapper">
+          <div id="infoText">
+            <div id="slider-buffer"></div>
+            <div id="buffer-results">
+              Approximately <span id="housesWithinCount">0</span> households within <span id="slider-buffer-value"></span> meters of the selected water points. 
+            </div>
+            <span class="slider-buffer-val" ></span>
+            <span class="slider-hh-count" ></span>
+            <br>
+            <p><small><i> Click a blue water-point to include or remove it from the buffer analysis. Adjust the buffer distance with the slider.</i></small></p>
+          </div>
+        </div> <!--  /.infoWrapper  -->
+      </div> <!-- /.col-sm-4 -->
+    </div> <!-- /.container-fluid -->
+
+
+    <!-- bower:js -->
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/d3/d3.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="bower_components/leaflet/dist/leaflet.js"></script>
+    <script src="bower_components/leaflet/dist/leaflet-src.js"></script>
+    <script src="bower_components/nouislider/distribute/jquery.nouislider.all.min.js"></script>
+    <!-- endbower -->
+    <script src="js/turf.min.js" charset="utf-8"></script>
+    <script src="js/main.js"></script>
+
+  </body>
+  </html>

@@ -1,0 +1,22 @@
+{
+  "name": "pumpbuffer",
+  "version": "0.0.0",
+  "authors": [
+    "danbjoseph <danbjoseph@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "d3": "~3.5.5",
+    "bootstrap": "~3.3.2",
+    "leaflet": "~0.7.3",
+    "jquery": "~1",
+    "nouislider": "~7.0.10"
+  }
+}

@@ -1,0 +1,9 @@
+{
+"type": "FeatureCollection",                                                                             
+"features": [
+{ "type": "Feature", "properties": { "name": "Erick 1 Handpump" }, "geometry": { "type": "Point", "coordinates": [ 124.965570, 10.808416 ] } },
+{ "type": "Feature", "properties": { "name": "Erick 2 Handpump" }, "geometry": { "type": "Point", "coordinates": [ 124.967170, 10.807229 ] } },
+{ "type": "Feature", "properties": { "name": "Dorian 1 Handpump" }, "geometry": { "type": "Point", "coordinates": [ 124.968185, 10.805200 ] } },
+{ "type": "Feature", "properties": { "name": "Dorian 2 Handpump" }, "geometry": { "type": "Point", "coordinates": [ 124.971990, 10.808047 ] } }
+]
+}
