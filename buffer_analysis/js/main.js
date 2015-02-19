@@ -125,7 +125,7 @@ $('#slider-buffer').noUiSlider({
   start: [ 50 ],
   step: 10,
   range: {
-    'min': [ 0 ],
+    'min': [ 10 ],
     'max': [ 400 ]
   },
   format: {
