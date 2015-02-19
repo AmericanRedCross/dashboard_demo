@@ -97,7 +97,13 @@ function mapPumps(){
       .attr("fill", "blue").attr("fill-opacity",0.8)
       .style('display','inline')
       .attr('class','mapped-pump')
-      .on("click",clickedPump);
+      .on("click",clickedPump)
+      .on("mouseover", function(d){
+        $('#tooltip').html(d.properties.name);    
+      })
+      .on("mouseout", function(){ 
+        $('#tooltip').empty();    
+      });
     // when map view changes adjust the locations of the svg circles
     function updatemarker_pumps(){
       mappedPumps.attr("cx",function(d) { 
@@ -223,6 +229,17 @@ $(window).resize(function(){
     $("#map").height(windowHeight);
     $("#infoWrapper").height(windowHeight);
 })
+// tooltip follows cursor
+$(document).ready(function() {
+    $('#map').mouseover(function(e) {
+        //Set the X and Y axis of the tooltip
+        $('#tooltip').css('top', e.pageY + 10 );
+        $('#tooltip').css('left', e.pageX + 20 );
+    }).mousemove(function(e) {
+        //Keep changing the X and Y axis for the tooltip, thus, the tooltip move along with the mouse
+        $("#tooltip").css({top:(e.pageY+15)+"px",left:(e.pageX+20)+"px"});
+    });
+});
 
 
 
